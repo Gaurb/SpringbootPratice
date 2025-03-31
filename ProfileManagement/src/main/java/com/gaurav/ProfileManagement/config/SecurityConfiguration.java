@@ -1,4 +1,4 @@
-package com.gaurav.security.config;
+package com.gaurav.ProfileManagement.config;
 
 
 import lombok.RequiredArgsConstructor;

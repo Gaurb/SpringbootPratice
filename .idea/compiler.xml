@@ -17,12 +17,22 @@
         <module name="CRUD" />
         <module name="security" />
       </profile>
+      <profile name="Annotation profile for ProfileManagement" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ProfileManagement" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BooksManagement" options="-parameters" />
       <module name="CRUD" options="-parameters" />
+      <module name="ProfileManagement" options="-parameters" />
       <module name="security" options="-parameters" />
     </option>
   </component>
