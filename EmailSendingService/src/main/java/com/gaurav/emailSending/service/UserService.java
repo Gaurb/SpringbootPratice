@@ -1,7 +1,9 @@
-package com.gaurav.ProfileManagement.controller;
+package com.gaurav.emailSending.service;
 
-import com.gaurav.ProfileManagement.user.User;
-import com.gaurav.ProfileManagement.user.UserRepository;
+import com.gaurav.emailSending.model.UserProfileUpdateRequest;
+import com.gaurav.emailSending.user.User;
+import com.gaurav.emailSending.user.UserRepository;
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private final UserRepository repository;
     private final UserDetailsService userDetailsService;
+    private final EmailService emailService;
 
     public User getLoggedInUser(){
         Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
@@ -23,14 +26,16 @@ public class UserService {
         return repository.findByEmail(username).orElseThrow(()-> new UsernameNotFoundException("User Does not Exist"));
     }
 
-    public User updateProfile(UserProfileUpdateRequest  request){
+    public User updateProfile(UserProfileUpdateRequest request){
         User user=getLoggedInUser();
-        user.setEmail(request.getEmail());
         user.setName(request.getName());
         User updatedUser=repository.save(user);
         UserDetails newUserDetails = userDetailsService.loadUserByUsername(updatedUser.getUsername());
-        Authentication newAuth = new UsernamePasswordAuthenticationToken(newUserDetails, null, newUserDetails.getAuthorities());
-        SecurityContextHolder.getContext().setAuthentication(newAuth);
+        try {
+            emailService.sendUpdateEmail(user.getEmail(), user.getName(), request.getName());
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
         return updatedUser;
     }
 }
