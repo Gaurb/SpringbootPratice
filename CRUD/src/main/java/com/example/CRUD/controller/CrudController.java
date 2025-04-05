@@ -3,7 +3,6 @@ package com.example.CRUD.controller;
 import com.example.CRUD.model.Student;
 import com.example.CRUD.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

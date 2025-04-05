@@ -15,25 +15,6 @@
         </processorPath>
         <module name="security" />
       </profile>
-      <profile name="Annotation profile for ProfileManagement" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="ProfileManagement" />
-        <module name="ProfileManagement (1)" />
-      </profile>
-      <profile name="Annotation profile for BooksManagement" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-        </processorPath>
-        <module name="BooksManagement" />
-      </profile>
       <profile name="Annotation profile for CRUD" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -54,6 +35,18 @@
         </processorPath>
         <module name="BooksManagement (1)" />
       </profile>
+      <profile name="Annotation profile for springWithRedis" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="ProfileManagement" />
+        <module name="ProfileManagement (1)" />
+        <module name="springWithRedis" />
+        <module name="BooksManagement" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CRUD (1)" target="21" />
@@ -70,6 +63,7 @@
       <module name="ProfileManagement (1)" options="-parameters" />
       <module name="ProfileManagement (2)" options="-parameters" />
       <module name="security" options="-parameters" />
+      <module name="springWithRedis" options="-parameters" />
     </option>
   </component>
 </project>

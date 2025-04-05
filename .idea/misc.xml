@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/ProfileManagement/pom.xml" />
         <option value="$PROJECT_DIR$/EmailSendingService/pom.xml" />
         <option value="$PROJECT_DIR$/Pagination/pom.xml" />
+        <option value="$PROJECT_DIR$/springWithRedis/pom.xml" />
       </list>
     </option>
   </component>
