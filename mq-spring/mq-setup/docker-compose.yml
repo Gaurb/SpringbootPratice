@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  citift:
+    image: ibmcom/mq
+    container_name: citift
+    ports:
+      - "1515:1414"
+      - "9155:9443"
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=CITIFT
+    volumes:
+      - ./citift/mqsc:/etc/mqm/config/mqsc
+    command: >
+      bash -c "
+      crtmqm CITIFT &&
+      strmqm CITIFT &&
+      runmqsc CITIFT < /etc/mqm/config/mqsc/setup.mqsc &&
+      tail -f /dev/null
+      "
+
+  thub:
+    image: ibmcom/mq
+    container_name: thub
+    ports:
+      - "1424:1414"
+      - "9244:9443"
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=THUB
+    volumes:
+      - ./thub/mqsc:/etc/mqm/config/mqsc
+    command: >
+      bash -c "
+      crtmqm THUB &&
+      strmqm THUB &&
+      runmqsc THUB < /etc/mqm/config/mqsc/setup.mqsc &&
+      tail -f /dev/null
+      "

@@ -1,15 +1,15 @@
-package com.example.mqspring.service;
+package com.example.mqspring.thub.service;
 
+import jakarta.jms.TextMessage;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
-import lombok.extern.slf4j.Slf4j;
-import jakarta.jms.TextMessage;
 
 @Service
 @Slf4j
-public class MQConsumerService {
+public class ThubConsumerService {
 
-    // @JmsListener(destination = "DEV.QUEUE.1")
+     @JmsListener(destination = "NA.CITIFT.THUB.LISTEN")
     public void receiveMessage(Object message) {
         try {
             if (message instanceof TextMessage) {
@@ -30,4 +30,4 @@ public class MQConsumerService {
             log.error("Error processing message: {}", e.getMessage(), e);
         }
     }
-} 
+}

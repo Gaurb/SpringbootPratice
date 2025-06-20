@@ -1,0 +1,1379 @@
+----------------------------------START FFST------------------------------------
+E:\Development\Spring\SpringbootPratice\MQService\FFDC\JMSCC0002.FDC PID:12236
+
+                                    IBM MQ classes for JMS and Java (AllClient packaging) First Failure Symptom Report
+                                            
+
+Product          :- IBM MQ classes for JMS and Java (AllClient packaging)
+Date/Time        :- Fri Jun 13 15:54:30 IST 2025
+System time      :- 1749810270102
+Operating System :- Windows 11
+UserID           :- Gaurav
+Java Vendor      :- Oracle Corporation
+Java Version     :- 23.0.1+11-39
+
+Source Class     :- com.ibm.mq.jmqi.remote.impl.RemoteProxyQueue
+Source Method    :- proxyMQGET(RemoteTls,MQMD,MQGMO,int,byte [ ],Pint,SpiGetOptions,Pint,Pint)
+ProbeID          :- 01
+Thread           :- name=http-nio-8081-exec-8 priority=5 group=main ccl=TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868
+
+
+                                      Data
+                                      ----
+
+|   Description  :-  Thread interrupted while waiting for lock
+
+                              Version information
+                              -------------------
+
+IBM MQ Jakarta Messaging Provider
+9.3.2.0
+p932-L230207
+Production
+Component Title: IBM MQ Jakarta Messaging Provider
+Component Name:  com.ibm.msg.client.jakarta.wmq
+Version:         9.3.2.0
+Class Name:      class com.ibm.msg.client.jakarta.wmq.factories.WMQComponent
+CMVC:            p932-L230207
+mqjbnd level:    p942-L250214.DE
+Jar location:    file:/C:/Users/Gaurav/.m2/repository/com/ibm/mq/com.ibm.mq.jakarta.client/9.3.2.0/com.ibm.mq.jakarta.client-9.3.2.0.jar
+Factory Class:   class com.ibm.msg.client.jakarta.wmq.factories.WMQFactoryFactory
+
+Common Services for Java Platform, Standard Edition
+9.3.2.0
+p932-L230207
+Production
+inPreferenceTo[0]: com.ibm.msg.client.commonservices.j2me
+Component Title:   Common Services for Java Platform, Standard Edition
+Component Name:    com.ibm.msg.client.commonservices.j2se
+Version:           9.3.2.0
+Class Name:        class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+CMVC:              p932-L230207
+Jar location:      file:/C:/Users/Gaurav/.m2/repository/com/ibm/mq/com.ibm.mq.jakarta.client/9.3.2.0/com.ibm.mq.jakarta.client-9.3.2.0.jar
+Factory Class:     class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+
+Jakarta Messaging Client
+9.3.2.0
+p932-L230207
+Production
+Component Title: Jakarta Messaging Client
+Component Name:  com.ibm.msg.client.jakarta.jms
+Version:         9.3.2.0
+Class Name:      class com.ibm.msg.client.jakarta.jms.internal.JMSComponent
+CMVC:            p932-L230207
+Jar location:    file:/C:/Users/Gaurav/.m2/repository/com/ibm/mq/com.ibm.mq.jakarta.client/9.3.2.0/com.ibm.mq.jakarta.client-9.3.2.0.jar
+Factory Class:   null
+
+IBM MQ Classes for Jakarta Messaging Service
+9.3.2.0
+p932-L230207
+Production
+Component Title: IBM MQ Classes for Jakarta Messaging Service
+Component Name:  com.ibm.mq.jakarta.jms
+Version:         9.3.2.0
+BuiltWith:       IBM Corporation  8.0.5.17 - pxa6480sr5fp17-20180627_01(SR5 FP17) Linux
+Class Name:      class com.ibm.mq.jakarta.jms.MQJMSComponent
+CMVC:            p932-L230207
+Jar location:    file:/C:/Users/Gaurav/.m2/repository/com/ibm/mq/com.ibm.mq.jakarta.client/9.3.2.0/com.ibm.mq.jakarta.client-9.3.2.0.jar
+Factory Class:   null
+
+
+
+                                  Stack trace
+                                  -----------
+
+Stack trace to show the location of the FFST call
+|   FFST Location  :-  java.lang.Exception
+|   	at com.ibm.msg.client.commonservices.trace.Trace.getCurrentPosition(Trace.java:2173)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.createFFSTString(Trace.java:2080)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1943)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1745)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteProxyQueue.proxyMQGET(RemoteProxyQueue.java:2707)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternalWithRecon(RemoteFAP.java:6152)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternal(RemoteFAP.java:6039)
+|   	at com.ibm.mq.jmqi.internal.JmqiTools.getMessage(JmqiTools.java:1358)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGet(RemoteFAP.java:6002)
+|   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiGet(InterceptedJmqiImpl.java:1341)
+|   	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiGet(ESEJMQI.java:602)
+|   	at com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.getMsg(WMQConsumerShadow.java:1796)
+|   	at com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.receiveInternal(WMQSyncConsumerShadow.java:233)
+|   	at com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.receive(WMQConsumerShadow.java:1462)
+|   	at com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.receive(WMQMessageConsumer.java:674)
+|   	at com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receiveInboundMessage(JmsMessageConsumerImpl.java:1051)
+|   	at com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receive(JmsMessageConsumerImpl.java:465)
+|   	at com.ibm.mq.jakarta.jms.MQMessageConsumer.receive(MQMessageConsumer.java:179)
+|   	at org.springframework.jms.support.destination.JmsDestinationAccessor.receiveFromConsumer(JmsDestinationAccessor.java:138)
+|   	at org.springframework.jms.core.JmsTemplate.doReceive(JmsTemplate.java:814)
+|   	at org.springframework.jms.core.JmsTemplate.doReceive(JmsTemplate.java:791)
+|   	at org.springframework.jms.core.JmsTemplate.lambda$receiveSelected$9(JmsTemplate.java:775)
+|   	at org.springframework.jms.core.JmsTemplate.execute(JmsTemplate.java:530)
+|   	at org.springframework.jms.core.JmsTemplate.receiveSelected(JmsTemplate.java:773)
+|   	at org.springframework.jms.core.JmsTemplate.receive(JmsTemplate.java:749)
+|   	at org.springframework.jms.core.JmsTemplate.receiveAndConvert(JmsTemplate.java:855)
+|   	at com.example.thub_mq.controller.ThubController.receiveMessage(ThubController.java:26)
+|   	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+|   	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+|   	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+|   	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+|   	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+|   	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+|   	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+|   	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+|   	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+|   	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+|   	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+|   	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+|   	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+|   	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+|   	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+|   	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+|   	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+|   	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+|   	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+|   	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+|   	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+|   	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+|   	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+|   	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+|   	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+|   	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+|   	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+|   	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+|   	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+|   	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+|   	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+|   	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+|   	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+|   	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+|   	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+|   	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+|   	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+|   	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+|   	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+|   	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+|   	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+|   	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+|   	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+|   	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+|   	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+|   	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+|   	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+|   	at java.base/java.lang.Thread.run(Thread.java:1575)
+|   
+
+                            Property Store Contents
+                            -----------------------
+
+All currently set properties
+|   APPLICATION_NAME               :-  thub-mq
+|   CONSOLE_LOG_CHARSET            :-  windows-1252
+|   FILE_LOG_CHARSET               :-  UTF-8
+|   LOGGED_APPLICATION_NAME        :-  [thub-mq] 
+|   PID                            :-  12236
+|   catalina.base                  :-  C:\Users\Gaurav\AppData\Local\Temp\tomcat.8081.6557275911700331555
+|   catalina.home                  :-  C:\Users\Gaurav\AppData\Local\Temp\tomcat.8081.6557275911700331555
+|   catalina.useNaming             :-  false
+|   file.encoding                  :-  UTF-8
+|   file.separator                 :-  \
+|   java.awt.headless              :-  true
+|   java.class.path                :-  E:\Development\Spring\SpringbootPratice\MQService\thub-mq\target\classes;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.0\spring-boot-starter-web-3.5.0.jar;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.0\spring-boot-starter-3.5.0.jar;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.0\spring-boot-starter-logging-3.5.0.jar;C:\Users\Gaurav\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\Gaurav\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\Gaurav\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\Gaurav\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Gaurav\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\Gaurav\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Gaurav\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.0\spring-boot-starter-json-3.5.0.jar;C:\Users\Gaurav\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.0\jackson-datatype-jdk8-2.19.0.jar;C:\Users\Gaurav\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.0\jackson-datatype-jsr310-2.19.0.jar;C:\Users\Gaurav\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.0\jackson-module-parameter-names-2.19.0.jar;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.0\spring-boot-starter-tomcat-3.5.0.jar;C:\Users\Gaurav\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.41\tomcat-embed-core-10.1.41.jar;C:\Users\Gaurav\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.41\tomcat-embed-el-10.1.41.jar;C:\Users\Gaurav\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.41\tomcat-embed-websocket-10.1.41.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-web\6.2.7\spring-web-6.2.7.jar;C:\Users\Gaurav\.m2\repository\io\micrometer\micrometer-observation\1.15.0\micrometer-observation-1.15.0.jar;C:\Users\Gaurav\.m2\repository\io\micrometer\micrometer-commons\1.15.0\micrometer-commons-1.15.0.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-webmvc\6.2.7\spring-webmvc-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-aop\6.2.7\spring-aop-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-expression\6.2.7\spring-expression-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;C:\Users\Gaurav\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-core\6.2.7\spring-core-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-jcl\6.2.7\spring-jcl-6.2.7.jar;C:\Users\Gaurav\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.0\jackson-databind-2.19.0.jar;C:\Users\Gaurav\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.0\jackson-annotations-2.19.0.jar;C:\Users\Gaurav\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.0\jackson-core-2.19.0.jar;C:\Users\Gaurav\.m2\repository\com\ibm\mq\mq-jms-spring-boot-starter\3.0.6\mq-jms-spring-boot-starter-3.0.6.jar;C:\Users\Gaurav\.m2\repository\com\ibm\mq\com.ibm.mq.jakarta.client\9.3.2.0\com.ibm.mq.jakarta.client-9.3.2.0.jar;C:\Users\Gaurav\.m2\repository\org\bouncycastle\bcprov-jdk15to18\1.72\bcprov-jdk15to18-1.72.jar;C:\Users\Gaurav\.m2\repository\org\bouncycastle\bcpkix-jdk15to18\1.72\bcpkix-jdk15to18-1.72.jar;C:\Users\Gaurav\.m2\repository\org\bouncycastle\bcutil-jdk15to18\1.72\bcutil-jdk15to18-1.72.jar;C:\Users\Gaurav\.m2\repository\jakarta\jms\jakarta.jms-api\3.1.0\jakarta.jms-api-3.1.0.jar;C:\Users\Gaurav\.m2\repository\org\json\json\20220924\json-20220924.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-context\6.2.7\spring-context-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-beans\6.2.7\spring-beans-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-jms\6.2.7\spring-jms-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-messaging\6.2.7\spring-messaging-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\springframework\spring-tx\6.2.7\spring-tx-6.2.7.jar;C:\Users\Gaurav\.m2\repository\org\messaginghub\pooled-jms\3.1.7\pooled-jms-3.1.7.jar;C:\Users\Gaurav\.m2\repository\org\apache\commons\commons-pool2\2.12.1\commons-pool2-2.12.1.jar;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot\3.5.0\spring-boot-3.5.0.jar;C:\Users\Gaurav\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.0\spring-boot-autoconfigure-3.5.0.jar
+|   java.class.version             :-  67.0
+|   java.home                      :-  C:\Program Files\Java\jdk-23
+|   java.io.tmpdir                 :-  C:\Users\Gaurav\AppData\Local\Temp\
+|   java.library.path              :-  C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\IBM\MQ\java\lib;C:\Program Files\IBM\MQ\java\lib64;C:\Program Files\Eclipse Adoptium\jdk-11.0.27.6-hotspot\bin;C:\Program Files\Java\jdk-23;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Git\bin;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\msys64\mingw64\bin;C:\msys64\ucrt64\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;c:\Users\Gaurav\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\IBM\MQ\bin64;C:\Program Files\IBM\MQ\bin;C:\Program Files\IBM\MQ\tools\c\samples\bin64;C:\Program Files\IBM\MQ\tools\c\samples\bin;C:\msys64\mingw64\bin;C:\msys64\ucrt64\bin;C:\Program Files\Git\bin;C:\Users\Gaurav\AppData\Local\Microsoft\WindowsApps;C:\Users\Gaurav\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Gaurav\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\Gaurav\AppData\Local\GitHubDesktop\bin;C:\apache-maven-3.9.9\bin;C:\Users\Gaurav\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\IBM\MQ\bin;;.
+|   java.runtime.name              :-  Java(TM) SE Runtime Environment
+|   java.runtime.version           :-  23.0.1+11-39
+|   java.specification.name        :-  Java Platform API Specification
+|   java.specification.vendor      :-  Oracle Corporation
+|   java.specification.version     :-  23
+|   java.vendor                    :-  Oracle Corporation
+|   java.vendor.url                :-  https://java.oracle.com/
+|   java.vendor.url.bug            :-  https://bugreport.java.com/bugreport/
+|   java.version                   :-  23.0.1
+|   java.version.date              :-  2024-10-15
+|   java.vm.compressedOopsMode     :-  32-bit
+|   java.vm.info                   :-  mixed mode, sharing
+|   java.vm.name                   :-  Java HotSpot(TM) 64-Bit Server VM
+|   java.vm.specification.name     :-  Java Virtual Machine Specification
+|   java.vm.specification.vendor   :-  Oracle Corporation
+|   java.vm.specification.version  :-  23
+|   java.vm.vendor                 :-  Oracle Corporation
+|   java.vm.version                :-  23.0.1+11-39
+|   jdk.debug                      :-  release
+|   line.separator                 :-  
+|   
+|   native.encoding                :-  Cp1252
+|   os.arch                        :-  amd64
+|   os.name                        :-  Windows 11
+|   os.version                     :-  10.0
+|   path.separator                 :-  ;
+|   stderr.encoding                :-  UTF-8
+|   stdout.encoding                :-  UTF-8
+|   sun.arch.data.model            :-  64
+|   sun.boot.library.path          :-  C:\Program Files\Java\jdk-23\bin
+|   sun.cpu.endian                 :-  little
+|   sun.cpu.isalist                :-  amd64
+|   sun.io.unicode.encoding        :-  UnicodeLittle
+|   sun.java.command               :-  com.example.thub_mq.ThubMqApplication
+|   sun.java.launcher              :-  SUN_STANDARD
+|   sun.jnu.encoding               :-  Cp1252
+|   sun.management.compiler        :-  HotSpot 64-Bit Tiered Compilers
+|   sun.os.patch.level             :-  
+|   sun.stderr.encoding            :-  UTF-8
+|   sun.stdout.encoding            :-  UTF-8
+|   user.country                   :-  IN
+|   user.dir                       :-  E:\Development\Spring\SpringbootPratice\MQService
+|   user.home                      :-  C:\Users\Gaurav
+|   user.language                  :-  en
+|   user.name                      :-  Gaurav
+|   user.script                    :-  
+|   user.timezone                  :-  Asia/Calcutta
+|   user.variant                   :-  
+
+                           WorkQueueMananger Contents
+                           --------------------------
+
+|   Current ThreadPool size      :-  1
+|   Maintain ThreadPool size     :-  false
+|   Maximum ThreadPool size      :-  -1
+|   ThreadPool inactive timeout  :-  0
+
+                               Runtime properties
+                               ------------------
+
+|   Available processors         :-  12
+|   Free memory in bytes (now)   :-  11287632
+|   Max memory in bytes          :-  1967128576
+|   Total memory in bytes (now)  :-  41943040
+
+                           Component Manager Contents
+                           --------------------------
+
+Common Services Components:
+|   CMVC               :-  p932-L230207
+|   Class Name         :-  class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+|   Component Name     :-  com.ibm.msg.client.commonservices.j2se
+|   Component Title    :-  Common Services for Java Platform, Standard Edition
+|   Factory Class      :-  class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+|   Jar location       :-  file:/C:/Users/Gaurav/.m2/repository/com/ibm/mq/com.ibm.mq.jakarta.client/9.3.2.0/com.ibm.mq.jakarta.client-9.3.2.0.jar
+|   Version            :-  9.3.2.0
+|   inPreferenceTo[0]  :-  com.ibm.msg.client.commonservices.j2me
+
+Messaging Provider Components:
+|   CMVC             :-  p932-L230207
+|   Class Name       :-  class com.ibm.msg.client.jakarta.wmq.factories.WMQComponent
+|   Component Name   :-  com.ibm.msg.client.jakarta.wmq
+|   Component Title  :-  IBM MQ Jakarta Messaging Provider
+|   Factory Class    :-  class com.ibm.msg.client.jakarta.wmq.factories.WMQFactoryFactory
+|   Jar location     :-  file:/C:/Users/Gaurav/.m2/repository/com/ibm/mq/com.ibm.mq.jakarta.client/9.3.2.0/com.ibm.mq.jakarta.client-9.3.2.0.jar
+|   Version          :-  9.3.2.0
+|   mqjbnd level     :-  p942-L250214.DE
+
+
+
+
+                         Provider Specific Information
+                         -----------------------------
+
+Overview of JMS System
+Num. Contexts    : 0
+Num. Connections : 1
+Num. Sessions    : 3
+Num. Consumers   : 2
+Num. Producers   : 0
+
+Detailed JMS System Information
+Contexts      : 
+Connections      : 
+|   Instance                    :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConnection@7f4e81b8
+|   connectOptions              :-  version:5(0x5) options:2097216(0x200040) option flags:'{MQCNO_HANDLE_SHARE_BLOCK} | {MQCNO_GENERATE_CONN_TAG}' clientConn:[channelName:'DEV.ADMIN.SVRCONN' version:12(0xc) channelType:6(0x6) transportType:2(0x2) desc:'<null>' qMgrName:'THUB' xmitQName:'<null>' connectionName:'localhost(1424)' mcaName:'<null>' modeName:'<null>' tpName:'<null>' batchSize:50(0x32) discInterval:6000(0x1770) shortRetryCount:10(0xa) shortRetryInterval:60(0x3c) longRetryCount:999999999(0x3b9ac9ff) longRetryInterval:1200(0x4b0) seqNumberWrap:99999999(0x5f5e0ff) maxMsgLength:104857600(0x6400000) putAuthority:1(0x1) dataConversion:0(0x0) userIdentifier:'<null>' password:'<null>' mcaUserIdentifier:'<null>' mcaType:1(0x1) remoteUserIdentifier:'admin' msgRetryExit:'<null>' msgRetryUserData:'<null>' msgRetryCount:10(0xa) heartbeatInterval:1(0x1) batchInterval:0(0x0) nonPersistentMsgSpeed:2(0x2) clustersDefined:0(0x0) networkPriority:0(0x0) mcaSecurityId:00000000000000000000000000000000000000000000000000000000000000000000000000000000 remoteSecurityId:00000000000000000000000000000000000000000000000000000000000000000000000000000000 sslCipherSpec:'<null>' sslPeerName:'<null>' sslClientAuth:0(0x0) keepAliveInterval:-1(0xffffffff) localAddress:'<null>' batchHeartbeat:0(0x0) hdrCompList:(0(0x0),-1(0xffffffff))msgCompList:(0(0x0),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff),-1(0xffffffff))clwlChannelRank:0(0x0) clwlChannelPriority:0(0x0) clwlChannelWeight:50(0x32) channelMonitoring:0(0x0) channelStatistics:0(0x0) exitNameLength:128(0x80) exitDataLength:32(0x20) sendExitsDefined:0(0x0) sendExit:'<null>' sendUserData:0000000000000000000000000000000000000000000000000000000000000000 sendExitPtr:<null> sendUserDataPtr:<null> receiveExitsDefined:0(0x0) receiveExit:'<null>' receiveUserData:0000000000000000000000000000000000000000000000000000000000000000 receiveExitPtr:<null> ReceiveUserDataPtr:<null> SharingConversations:999999999(0x3b9ac9ff) propertyControl:0(0x0) maxInstances:999999999(0x3b9ac9ff) maxInstancesPerClient:999999999(0x3b9ac9ff) clientChannelWeight:0(0x0) connectionAffinity:1(0x1) batchDataLimit:5000(0x1388) useDLQ:2(0x2) defReconnect:0(0x0) certificateLabel:'' ] connTag:0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 sslConfig:[version:1(0x1) keyRepository:'<null>' cryptoHardware:'<null>' authInfoRecCount:0(0x0) keyResetCount:0(0x0) fipsRequired:0(0x0) encryptionPolicySuiteB:(1(0x1),0(0x0),0(0x0),0(0x0))certificateValPolicy:0(0x0) certificateLabel:'' keyRepoPassword:'<null>' ] connectionId:414D51435448554220202020202020209DF64B6800540040 securityParms:[version:1(0x1) authenticationType:1(0x1) cspUserId:'admin' cspPassword:'length:8' initialKey:'<null>' ] ccdtUrl:'<null>' ccdtUrlLength:0(0x0) applName:'<null>' 
+|   exceptionListener           :-  com.ibm.msg.client.jakarta.jms.internal.JmsProviderExceptionListener@6801d629
+|   helper                      :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerOwnerShadow@6de3de03
+|   queueManagerName            :-  THUB
+|   tempQPrefix                 :-  <null>
+|   temporaryDestinationNumber  :-  1
+|   temporaryModelQ             :-  <null>
+|   XMSC_ADMIN_OBJECT_TYPE              :-  20
+|   XMSC_ASYNC_EXCEPTIONS               :-  1
+|   XMSC_CLIENT_ID                      :-  <null>
+|   XMSC_CONNECTION_TYPE                :-  6
+|   XMSC_CONNECTION_TYPE_NAME           :-  com.ibm.msg.client.jakarta.wmq
+|   XMSC_OBJECT_IDENTITY                :-  2135851448
+|   XMSC_PASSWORD                       :-  ********
+|   XMSC_RTT_DIRECT_AUTH                :-  0
+|   XMSC_RTT_PROXY_HOSTNAME             :-  <null>
+|   XMSC_RTT_PROXY_PORT                 :-  443
+|   XMSC_USERID                         :-  admin
+|   XMSC_USER_AUTHENTICATION_MQCSP      :-  true
+|   XMSC_WMQ_BROKER_CC_SUBQ             :-  SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_BROKER_CONTROLQ            :-  SYSTEM.BROKER.CONTROL.QUEUE
+|   XMSC_WMQ_BROKER_PUBQ                :-  SYSTEM.BROKER.DEFAULT.STREAM
+|   XMSC_WMQ_BROKER_QMGR                :-  
+|   XMSC_WMQ_BROKER_SUBQ                :-  SYSTEM.JMS.ND.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_CAPABILITY_ADVANCED        :-  true
+|   XMSC_WMQ_CCDTURL                    :-  <null>
+|   XMSC_WMQ_CF_DESCRIPTION             :-  <null>
+|   XMSC_WMQ_CHANNEL                    :-  DEV.ADMIN.SVRCONN
+|   XMSC_WMQ_CLEANUP_INTERVAL           :-  3600000
+|   XMSC_WMQ_CLEANUP_LEVEL              :-  1
+|   XMSC_WMQ_CLIENT_RECONNECT_OPTIONS   :-  0
+|   XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT   :-  1800
+|   XMSC_WMQ_CLONE_SUPPORT              :-  0
+|   XMSC_WMQ_COMMAND_LEVEL              :-  924
+|   XMSC_WMQ_CONNECTION_ID              :-  414D51435448554220202020202020209DF64B6800540040
+|   XMSC_WMQ_CONNECTION_MODE            :-  1
+|   XMSC_WMQ_CONNECTION_NAME_LIST_INT   :-  localhost(1424)
+|   XMSC_WMQ_CONNECTION_TAG             :-  [B@50a33f1b
+|   XMSC_WMQ_CONNECT_OPTIONS            :-  0
+|   XMSC_WMQ_HEADER_COMP                :-  [0]
+|   XMSC_WMQ_HOST_NAME                  :-  localhost/127.0.0.1
+|   XMSC_WMQ_LOCAL_ADDRESS              :-  
+|   XMSC_WMQ_MAP_NAME_STYLE             :-  true
+|   XMSC_WMQ_MAX_BUFFER_SIZE            :-  1000
+|   XMSC_WMQ_MESSAGE_RETENTION          :-  1
+|   XMSC_WMQ_MESSAGE_SELECTION          :-  0
+|   XMSC_WMQ_MSG_BATCH_SIZE             :-  10
+|   XMSC_WMQ_MSG_COMP                   :-  [0]
+|   XMSC_WMQ_OPT_PUB                    :-  false
+|   XMSC_WMQ_OUTCOME_NOTIFICATION       :-  true
+|   XMSC_WMQ_POLLING_INTERVAL           :-  5000
+|   XMSC_WMQ_PORT                       :-  1424
+|   XMSC_WMQ_PROCESS_DURATION           :-  0
+|   XMSC_WMQ_PROVIDER_VERSION           :-  8.0.0.0
+|   XMSC_WMQ_PUB_ACK_INTERVAL           :-  25
+|   XMSC_WMQ_QMGR_CCSID                 :-  819
+|   XMSC_WMQ_QUEUE_MANAGER              :-  THUB
+|   XMSC_WMQ_RECEIVE_EXIT               :-  <null>
+|   XMSC_WMQ_RECEIVE_EXIT_INIT          :-  <null>
+|   XMSC_WMQ_RECEIVE_ISOLATION          :-  0
+|   XMSC_WMQ_REMOTE_QMGR_QSGNAME        :-  <null>
+|   XMSC_WMQ_RESCAN_INTERVAL            :-  5000
+|   XMSC_WMQ_RESOLVED_CONNECTION_TAG    :-  MQCT9DF64B6800540040THUB_2025-06-13_09.59.54thub_mq.ThubMqApplication                                                           
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER     :-  THUB
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER_ID  :-  THUB_2025-06-13_09.59.54                        
+|   XMSC_WMQ_SECURITY_EXIT              :-  <null>
+|   XMSC_WMQ_SECURITY_EXIT_INIT         :-  <null>
+|   XMSC_WMQ_SEND_CHECK_COUNT           :-  0
+|   XMSC_WMQ_SEND_EXIT                  :-  <null>
+|   XMSC_WMQ_SEND_EXIT_INIT             :-  <null>
+|   XMSC_WMQ_SHARE_CONV_ALLOWED         :-  1
+|   XMSC_WMQ_SPARSE_SUBSCRIPTIONS       :-  false
+|   XMSC_WMQ_SSL_CERT_STORES_COL        :-  <null>
+|   XMSC_WMQ_SSL_CERT_STORES_STR        :-  <null>
+|   XMSC_WMQ_SSL_CIPHER_SUITE           :-  <null>
+|   XMSC_WMQ_SSL_FIPS_REQUIRED          :-  false
+|   XMSC_WMQ_SSL_KEY_RESETCOUNT         :-  0
+|   XMSC_WMQ_SSL_PEER_NAME              :-  <null>
+|   XMSC_WMQ_SSL_SOCKET_FACTORY         :-  <null>
+|   XMSC_WMQ_STATUS_REFRESH_INTERVAL    :-  60000
+|   XMSC_WMQ_SUBSCRIPTION_STORE         :-  1
+|   XMSC_WMQ_SYNCPOINT_ALL_GETS         :-  false
+|   XMSC_WMQ_TARGET_CLIENT_MATCHING     :-  true
+|   XMSC_WMQ_TEMPORARY_MODEL            :-  SYSTEM.DEFAULT.MODEL.QUEUE
+|   XMSC_WMQ_TEMP_Q_PREFIX              :-  
+|   XMSC_WMQ_TEMP_TOPIC_PREFIX          :-  
+|   XMSC_WMQ_USE_CONNECTION_POOLING     :-  true
+|   brokerVersion                       :-  -1
+|   failIfQuiesce                       :-  1
+|   multicast                           :-  0
+|   version                             :-  7
+|   wildcardFormat                      :-  0
+
+Sessions         : 
+|   Instance           :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession@273a7bc9
+|   Parent Connection  :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConnection@7f4e81b8
+|   ackMode            :-  0
+|   asfConsumer        :-  <null>
+|   asfDestination     :-  <null>
+|   asyncPutCounter    :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession$AsyncPutCounter@3a1ea819
+|   didRecovAsyncPut   :-  false
+|   helper             :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerOwnerShadow@5cc881ed
+|   inSyncpoint        :-  false
+|   queueManagerName   :-  THUB
+|   XMSC_ACKNOWLEDGE_MODE               :-  0
+|   XMSC_ADMIN_OBJECT_TYPE              :-  20
+|   XMSC_ASYNC_EXCEPTIONS               :-  1
+|   XMSC_CLIENT_ID                      :-  <null>
+|   XMSC_CONNECTION_TYPE                :-  6
+|   XMSC_CONNECTION_TYPE_NAME           :-  com.ibm.msg.client.jakarta.wmq
+|   XMSC_OBJECT_IDENTITY                :-  658144201
+|   XMSC_PASSWORD                       :-  ********
+|   XMSC_RTT_DIRECT_AUTH                :-  0
+|   XMSC_RTT_PROXY_HOSTNAME             :-  <null>
+|   XMSC_RTT_PROXY_PORT                 :-  443
+|   XMSC_TRANSACTED                     :-  true
+|   XMSC_USERID                         :-  admin
+|   XMSC_USER_AUTHENTICATION_MQCSP      :-  true
+|   XMSC_WMQ_BROKER_CC_SUBQ             :-  SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_BROKER_CONTROLQ            :-  SYSTEM.BROKER.CONTROL.QUEUE
+|   XMSC_WMQ_BROKER_PUBQ                :-  SYSTEM.BROKER.DEFAULT.STREAM
+|   XMSC_WMQ_BROKER_QMGR                :-  
+|   XMSC_WMQ_BROKER_SUBQ                :-  SYSTEM.JMS.ND.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_CAPABILITY_ADVANCED        :-  true
+|   XMSC_WMQ_CCDTURL                    :-  <null>
+|   XMSC_WMQ_CF_DESCRIPTION             :-  <null>
+|   XMSC_WMQ_CHANNEL                    :-  DEV.ADMIN.SVRCONN
+|   XMSC_WMQ_CLEANUP_INTERVAL           :-  3600000
+|   XMSC_WMQ_CLEANUP_LEVEL              :-  1
+|   XMSC_WMQ_CLIENT_RECONNECT_OPTIONS   :-  0
+|   XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT   :-  1800
+|   XMSC_WMQ_CLONE_SUPPORT              :-  0
+|   XMSC_WMQ_COMMAND_LEVEL              :-  924
+|   XMSC_WMQ_CONNECTION_ID              :-  414D51435448554220202020202020209DF64B6800540040
+|   XMSC_WMQ_CONNECTION_MODE            :-  1
+|   XMSC_WMQ_CONNECTION_NAME_LIST_INT   :-  localhost(1424)
+|   XMSC_WMQ_CONNECTION_TAG             :-  [B@50a33f1b
+|   XMSC_WMQ_CONNECT_OPTIONS            :-  0
+|   XMSC_WMQ_HEADER_COMP                :-  [0]
+|   XMSC_WMQ_HOST_NAME                  :-  localhost/127.0.0.1
+|   XMSC_WMQ_LOCAL_ADDRESS              :-  
+|   XMSC_WMQ_MAP_NAME_STYLE             :-  true
+|   XMSC_WMQ_MAX_BUFFER_SIZE            :-  1000
+|   XMSC_WMQ_MESSAGE_RETENTION          :-  1
+|   XMSC_WMQ_MESSAGE_SELECTION          :-  0
+|   XMSC_WMQ_MSG_BATCH_SIZE             :-  10
+|   XMSC_WMQ_MSG_COMP                   :-  [0]
+|   XMSC_WMQ_OPT_PUB                    :-  false
+|   XMSC_WMQ_OUTCOME_NOTIFICATION       :-  true
+|   XMSC_WMQ_POLLING_INTERVAL           :-  5000
+|   XMSC_WMQ_PORT                       :-  1424
+|   XMSC_WMQ_PROCESS_DURATION           :-  0
+|   XMSC_WMQ_PROVIDER_VERSION           :-  8.0.0.0
+|   XMSC_WMQ_PUB_ACK_INTERVAL           :-  25
+|   XMSC_WMQ_QMGR_CCSID                 :-  819
+|   XMSC_WMQ_QUEUE_MANAGER              :-  THUB
+|   XMSC_WMQ_RECEIVE_EXIT               :-  <null>
+|   XMSC_WMQ_RECEIVE_EXIT_INIT          :-  <null>
+|   XMSC_WMQ_RECEIVE_ISOLATION          :-  0
+|   XMSC_WMQ_REMOTE_QMGR_QSGNAME        :-  <null>
+|   XMSC_WMQ_RESCAN_INTERVAL            :-  5000
+|   XMSC_WMQ_RESOLVED_CONNECTION_TAG    :-  MQCT9DF64B6800540040THUB_2025-06-13_09.59.54thub_mq.ThubMqApplication                                                           
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER     :-  THUB
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER_ID  :-  THUB_2025-06-13_09.59.54                        
+|   XMSC_WMQ_SECURITY_EXIT              :-  <null>
+|   XMSC_WMQ_SECURITY_EXIT_INIT         :-  <null>
+|   XMSC_WMQ_SEND_CHECK_COUNT           :-  0
+|   XMSC_WMQ_SEND_EXIT                  :-  <null>
+|   XMSC_WMQ_SEND_EXIT_INIT             :-  <null>
+|   XMSC_WMQ_SHARE_CONV_ALLOWED         :-  1
+|   XMSC_WMQ_SPARSE_SUBSCRIPTIONS       :-  false
+|   XMSC_WMQ_SSL_CERT_STORES_COL        :-  <null>
+|   XMSC_WMQ_SSL_CERT_STORES_STR        :-  <null>
+|   XMSC_WMQ_SSL_CIPHER_SUITE           :-  <null>
+|   XMSC_WMQ_SSL_FIPS_REQUIRED          :-  false
+|   XMSC_WMQ_SSL_KEY_RESETCOUNT         :-  0
+|   XMSC_WMQ_SSL_PEER_NAME              :-  <null>
+|   XMSC_WMQ_SSL_SOCKET_FACTORY         :-  <null>
+|   XMSC_WMQ_STATUS_REFRESH_INTERVAL    :-  60000
+|   XMSC_WMQ_SUBSCRIPTION_STORE         :-  1
+|   XMSC_WMQ_SYNCPOINT_ALL_GETS         :-  false
+|   XMSC_WMQ_TARGET_CLIENT_MATCHING     :-  true
+|   XMSC_WMQ_TEMPORARY_MODEL            :-  SYSTEM.DEFAULT.MODEL.QUEUE
+|   XMSC_WMQ_TEMP_Q_PREFIX              :-  
+|   XMSC_WMQ_TEMP_TOPIC_PREFIX          :-  
+|   XMSC_WMQ_USE_CONNECTION_POOLING     :-  true
+|   brokerVersion                       :-  -1
+|   failIfQuiesce                       :-  1
+|   multicast                           :-  0
+|   version                             :-  7
+|   wildcardFormat                      :-  0
+
+|   Instance           :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession@42a7d139
+|   Parent Connection  :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConnection@7f4e81b8
+|   ackMode            :-  0
+|   asfConsumer        :-  <null>
+|   asfDestination     :-  <null>
+|   asyncPutCounter    :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession$AsyncPutCounter@2fa85fb1
+|   didRecovAsyncPut   :-  false
+|   helper             :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerOwnerShadow@663ae6b8
+|   inSyncpoint        :-  false
+|   queueManagerName   :-  THUB
+|   XMSC_ACKNOWLEDGE_MODE               :-  0
+|   XMSC_ADMIN_OBJECT_TYPE              :-  20
+|   XMSC_ASYNC_EXCEPTIONS               :-  1
+|   XMSC_CLIENT_ID                      :-  <null>
+|   XMSC_CONNECTION_TYPE                :-  6
+|   XMSC_CONNECTION_TYPE_NAME           :-  com.ibm.msg.client.jakarta.wmq
+|   XMSC_OBJECT_IDENTITY                :-  1118294329
+|   XMSC_PASSWORD                       :-  ********
+|   XMSC_RTT_DIRECT_AUTH                :-  0
+|   XMSC_RTT_PROXY_HOSTNAME             :-  <null>
+|   XMSC_RTT_PROXY_PORT                 :-  443
+|   XMSC_TRANSACTED                     :-  true
+|   XMSC_USERID                         :-  admin
+|   XMSC_USER_AUTHENTICATION_MQCSP      :-  true
+|   XMSC_WMQ_BROKER_CC_SUBQ             :-  SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_BROKER_CONTROLQ            :-  SYSTEM.BROKER.CONTROL.QUEUE
+|   XMSC_WMQ_BROKER_PUBQ                :-  SYSTEM.BROKER.DEFAULT.STREAM
+|   XMSC_WMQ_BROKER_QMGR                :-  
+|   XMSC_WMQ_BROKER_SUBQ                :-  SYSTEM.JMS.ND.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_CAPABILITY_ADVANCED        :-  true
+|   XMSC_WMQ_CCDTURL                    :-  <null>
+|   XMSC_WMQ_CF_DESCRIPTION             :-  <null>
+|   XMSC_WMQ_CHANNEL                    :-  DEV.ADMIN.SVRCONN
+|   XMSC_WMQ_CLEANUP_INTERVAL           :-  3600000
+|   XMSC_WMQ_CLEANUP_LEVEL              :-  1
+|   XMSC_WMQ_CLIENT_RECONNECT_OPTIONS   :-  0
+|   XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT   :-  1800
+|   XMSC_WMQ_CLONE_SUPPORT              :-  0
+|   XMSC_WMQ_COMMAND_LEVEL              :-  924
+|   XMSC_WMQ_CONNECTION_ID              :-  414D51435448554220202020202020209DF64B6800540040
+|   XMSC_WMQ_CONNECTION_MODE            :-  1
+|   XMSC_WMQ_CONNECTION_NAME_LIST_INT   :-  localhost(1424)
+|   XMSC_WMQ_CONNECTION_TAG             :-  [B@50a33f1b
+|   XMSC_WMQ_CONNECT_OPTIONS            :-  0
+|   XMSC_WMQ_HEADER_COMP                :-  [0]
+|   XMSC_WMQ_HOST_NAME                  :-  localhost/127.0.0.1
+|   XMSC_WMQ_LOCAL_ADDRESS              :-  
+|   XMSC_WMQ_MAP_NAME_STYLE             :-  true
+|   XMSC_WMQ_MAX_BUFFER_SIZE            :-  1000
+|   XMSC_WMQ_MESSAGE_RETENTION          :-  1
+|   XMSC_WMQ_MESSAGE_SELECTION          :-  0
+|   XMSC_WMQ_MSG_BATCH_SIZE             :-  10
+|   XMSC_WMQ_MSG_COMP                   :-  [0]
+|   XMSC_WMQ_OPT_PUB                    :-  false
+|   XMSC_WMQ_OUTCOME_NOTIFICATION       :-  true
+|   XMSC_WMQ_POLLING_INTERVAL           :-  5000
+|   XMSC_WMQ_PORT                       :-  1424
+|   XMSC_WMQ_PROCESS_DURATION           :-  0
+|   XMSC_WMQ_PROVIDER_VERSION           :-  8.0.0.0
+|   XMSC_WMQ_PUB_ACK_INTERVAL           :-  25
+|   XMSC_WMQ_QMGR_CCSID                 :-  819
+|   XMSC_WMQ_QUEUE_MANAGER              :-  THUB
+|   XMSC_WMQ_RECEIVE_EXIT               :-  <null>
+|   XMSC_WMQ_RECEIVE_EXIT_INIT          :-  <null>
+|   XMSC_WMQ_RECEIVE_ISOLATION          :-  0
+|   XMSC_WMQ_REMOTE_QMGR_QSGNAME        :-  <null>
+|   XMSC_WMQ_RESCAN_INTERVAL            :-  5000
+|   XMSC_WMQ_RESOLVED_CONNECTION_TAG    :-  MQCT9DF64B6800540040THUB_2025-06-13_09.59.54thub_mq.ThubMqApplication                                                           
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER     :-  THUB
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER_ID  :-  THUB_2025-06-13_09.59.54                        
+|   XMSC_WMQ_SECURITY_EXIT              :-  <null>
+|   XMSC_WMQ_SECURITY_EXIT_INIT         :-  <null>
+|   XMSC_WMQ_SEND_CHECK_COUNT           :-  0
+|   XMSC_WMQ_SEND_EXIT                  :-  <null>
+|   XMSC_WMQ_SEND_EXIT_INIT             :-  <null>
+|   XMSC_WMQ_SHARE_CONV_ALLOWED         :-  1
+|   XMSC_WMQ_SPARSE_SUBSCRIPTIONS       :-  false
+|   XMSC_WMQ_SSL_CERT_STORES_COL        :-  <null>
+|   XMSC_WMQ_SSL_CERT_STORES_STR        :-  <null>
+|   XMSC_WMQ_SSL_CIPHER_SUITE           :-  <null>
+|   XMSC_WMQ_SSL_FIPS_REQUIRED          :-  false
+|   XMSC_WMQ_SSL_KEY_RESETCOUNT         :-  0
+|   XMSC_WMQ_SSL_PEER_NAME              :-  <null>
+|   XMSC_WMQ_SSL_SOCKET_FACTORY         :-  <null>
+|   XMSC_WMQ_STATUS_REFRESH_INTERVAL    :-  60000
+|   XMSC_WMQ_SUBSCRIPTION_STORE         :-  1
+|   XMSC_WMQ_SYNCPOINT_ALL_GETS         :-  false
+|   XMSC_WMQ_TARGET_CLIENT_MATCHING     :-  true
+|   XMSC_WMQ_TEMPORARY_MODEL            :-  SYSTEM.DEFAULT.MODEL.QUEUE
+|   XMSC_WMQ_TEMP_Q_PREFIX              :-  
+|   XMSC_WMQ_TEMP_TOPIC_PREFIX          :-  
+|   XMSC_WMQ_USE_CONNECTION_POOLING     :-  true
+|   brokerVersion                       :-  -1
+|   failIfQuiesce                       :-  1
+|   multicast                           :-  0
+|   version                             :-  7
+|   wildcardFormat                      :-  0
+
+|   Instance           :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession@4a3c4382
+|   Parent Connection  :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConnection@7f4e81b8
+|   ackMode            :-  0
+|   asfConsumer        :-  <null>
+|   asfDestination     :-  <null>
+|   asyncPutCounter    :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession$AsyncPutCounter@29abc406
+|   didRecovAsyncPut   :-  false
+|   helper             :-  com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerOwnerShadow@3174ef37
+|   inSyncpoint        :-  false
+|   queueManagerName   :-  THUB
+|   XMSC_ACKNOWLEDGE_MODE               :-  0
+|   XMSC_ADMIN_OBJECT_TYPE              :-  20
+|   XMSC_ASYNC_EXCEPTIONS               :-  1
+|   XMSC_CLIENT_ID                      :-  <null>
+|   XMSC_CONNECTION_TYPE                :-  6
+|   XMSC_CONNECTION_TYPE_NAME           :-  com.ibm.msg.client.jakarta.wmq
+|   XMSC_OBJECT_IDENTITY                :-  1245463426
+|   XMSC_PASSWORD                       :-  ********
+|   XMSC_RTT_DIRECT_AUTH                :-  0
+|   XMSC_RTT_PROXY_HOSTNAME             :-  <null>
+|   XMSC_RTT_PROXY_PORT                 :-  443
+|   XMSC_TRANSACTED                     :-  true
+|   XMSC_USERID                         :-  admin
+|   XMSC_USER_AUTHENTICATION_MQCSP      :-  true
+|   XMSC_WMQ_BROKER_CC_SUBQ             :-  SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_BROKER_CONTROLQ            :-  SYSTEM.BROKER.CONTROL.QUEUE
+|   XMSC_WMQ_BROKER_PUBQ                :-  SYSTEM.BROKER.DEFAULT.STREAM
+|   XMSC_WMQ_BROKER_QMGR                :-  
+|   XMSC_WMQ_BROKER_SUBQ                :-  SYSTEM.JMS.ND.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_CAPABILITY_ADVANCED        :-  true
+|   XMSC_WMQ_CCDTURL                    :-  <null>
+|   XMSC_WMQ_CF_DESCRIPTION             :-  <null>
+|   XMSC_WMQ_CHANNEL                    :-  DEV.ADMIN.SVRCONN
+|   XMSC_WMQ_CLEANUP_INTERVAL           :-  3600000
+|   XMSC_WMQ_CLEANUP_LEVEL              :-  1
+|   XMSC_WMQ_CLIENT_RECONNECT_OPTIONS   :-  0
+|   XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT   :-  1800
+|   XMSC_WMQ_CLONE_SUPPORT              :-  0
+|   XMSC_WMQ_COMMAND_LEVEL              :-  924
+|   XMSC_WMQ_CONNECTION_ID              :-  414D51435448554220202020202020209DF64B6800540040
+|   XMSC_WMQ_CONNECTION_MODE            :-  1
+|   XMSC_WMQ_CONNECTION_NAME_LIST_INT   :-  localhost(1424)
+|   XMSC_WMQ_CONNECTION_TAG             :-  [B@50a33f1b
+|   XMSC_WMQ_CONNECT_OPTIONS            :-  0
+|   XMSC_WMQ_HEADER_COMP                :-  [0]
+|   XMSC_WMQ_HOST_NAME                  :-  localhost/127.0.0.1
+|   XMSC_WMQ_LOCAL_ADDRESS              :-  
+|   XMSC_WMQ_MAP_NAME_STYLE             :-  true
+|   XMSC_WMQ_MAX_BUFFER_SIZE            :-  1000
+|   XMSC_WMQ_MESSAGE_RETENTION          :-  1
+|   XMSC_WMQ_MESSAGE_SELECTION          :-  0
+|   XMSC_WMQ_MSG_BATCH_SIZE             :-  10
+|   XMSC_WMQ_MSG_COMP                   :-  [0]
+|   XMSC_WMQ_OPT_PUB                    :-  false
+|   XMSC_WMQ_OUTCOME_NOTIFICATION       :-  true
+|   XMSC_WMQ_POLLING_INTERVAL           :-  5000
+|   XMSC_WMQ_PORT                       :-  1424
+|   XMSC_WMQ_PROCESS_DURATION           :-  0
+|   XMSC_WMQ_PROVIDER_VERSION           :-  8.0.0.0
+|   XMSC_WMQ_PUB_ACK_INTERVAL           :-  25
+|   XMSC_WMQ_QMGR_CCSID                 :-  819
+|   XMSC_WMQ_QUEUE_MANAGER              :-  THUB
+|   XMSC_WMQ_RECEIVE_EXIT               :-  <null>
+|   XMSC_WMQ_RECEIVE_EXIT_INIT          :-  <null>
+|   XMSC_WMQ_RECEIVE_ISOLATION          :-  0
+|   XMSC_WMQ_REMOTE_QMGR_QSGNAME        :-  <null>
+|   XMSC_WMQ_RESCAN_INTERVAL            :-  5000
+|   XMSC_WMQ_RESOLVED_CONNECTION_TAG    :-  MQCT9DF64B6800540040THUB_2025-06-13_09.59.54thub_mq.ThubMqApplication                                                           
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER     :-  THUB
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER_ID  :-  THUB_2025-06-13_09.59.54                        
+|   XMSC_WMQ_SECURITY_EXIT              :-  <null>
+|   XMSC_WMQ_SECURITY_EXIT_INIT         :-  <null>
+|   XMSC_WMQ_SEND_CHECK_COUNT           :-  0
+|   XMSC_WMQ_SEND_EXIT                  :-  <null>
+|   XMSC_WMQ_SEND_EXIT_INIT             :-  <null>
+|   XMSC_WMQ_SHARE_CONV_ALLOWED         :-  1
+|   XMSC_WMQ_SPARSE_SUBSCRIPTIONS       :-  false
+|   XMSC_WMQ_SSL_CERT_STORES_COL        :-  <null>
+|   XMSC_WMQ_SSL_CERT_STORES_STR        :-  <null>
+|   XMSC_WMQ_SSL_CIPHER_SUITE           :-  <null>
+|   XMSC_WMQ_SSL_FIPS_REQUIRED          :-  false
+|   XMSC_WMQ_SSL_KEY_RESETCOUNT         :-  0
+|   XMSC_WMQ_SSL_PEER_NAME              :-  <null>
+|   XMSC_WMQ_SSL_SOCKET_FACTORY         :-  <null>
+|   XMSC_WMQ_STATUS_REFRESH_INTERVAL    :-  60000
+|   XMSC_WMQ_SUBSCRIPTION_STORE         :-  1
+|   XMSC_WMQ_SYNCPOINT_ALL_GETS         :-  false
+|   XMSC_WMQ_TARGET_CLIENT_MATCHING     :-  true
+|   XMSC_WMQ_TEMPORARY_MODEL            :-  SYSTEM.DEFAULT.MODEL.QUEUE
+|   XMSC_WMQ_TEMP_Q_PREFIX              :-  
+|   XMSC_WMQ_TEMP_TOPIC_PREFIX          :-  
+|   XMSC_WMQ_USE_CONNECTION_POOLING     :-  true
+|   brokerVersion                       :-  -1
+|   failIfQuiesce                       :-  1
+|   multicast                           :-  0
+|   version                             :-  7
+|   wildcardFormat                      :-  0
+
+Consumers        : 
+|   Instance         :-  com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer@1c504187
+|   Parent Session   :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession@273a7bc9
+|   asyncShadow      :-  <null>
+|   currentShadow    :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow@5c4c6b7f
+|   destination      :-  
+|   |   CCSID                           :-  1208
+|   |   JMS_IBM_Unmappable_Action       :-  REPORT
+|   |   JMS_IBM_Unmappable_Replacement  :-  63
+|   |   XMSC_ADMIN_OBJECT_TYPE          :-  33
+|   |   XMSC_CONNECTION_TYPE            :-  5
+|   |   XMSC_CONNECTION_TYPE_NAME       :-  com.ibm.msg.client.jakarta.wmq
+|   |   XMSC_DESTINATION_NAME           :-  NA.CITIFT.THUB.LISTEN
+|   |   XMSC_WMQ_BROKER_PUBQ            :-  
+|   |   XMSC_WMQ_BROKER_PUBQ_QMGR       :-  
+|   |   XMSC_WMQ_QUEUE_MANAGER          :-  
+|   |   XMSC_WMQ_REPLYTO_STYLE          :-  0
+|   |   alternateUserId                 :-  <null>
+|   |   brokerCCDurSubQueue             :-  SYSTEM.JMS.D.CC.SUBSCRIBER.QUEUE
+|   |   brokerDurSubQueue               :-  SYSTEM.JMS.D.SUBSCRIBER.QUEUE
+|   |   brokerVersion                   :-  0
+|   |   deliveryMode                    :-  -2
+|   |   destDescription                 :-  <null>
+|   |   encoding                        :-  273
+|   |   failIfQuiesce                   :-  1
+|   |   mdMessageContext                :-  0
+|   |   mdReadEnabled                   :-  false
+|   |   mdWriteEnabled                  :-  false
+|   |   messageBody                     :-  2
+|   |   priority                        :-  -2
+|   |   putAsyncAllowed                 :-  -1
+|   |   readAheadAllowed                :-  -1
+|   |   readAheadClosePolicy            :-  2
+|   |   targetClient                    :-  0
+|   |   timeToLive                      :-  -2
+|   |   version                         :-  7
+|   |   wildcardFormat                  :-  0
+|   nolocal          :-  false
+|   selector         :-  <null>
+|   subcriptionName  :-  <null>
+|   syncShadow       :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow@5c4c6b7f
+|   XMSC_ACKNOWLEDGE_MODE               :-  0
+|   XMSC_ADMIN_OBJECT_TYPE              :-  20
+|   XMSC_ASYNC_EXCEPTIONS               :-  1
+|   XMSC_CLIENT_ID                      :-  <null>
+|   XMSC_CONNECTION_TYPE                :-  6
+|   XMSC_CONNECTION_TYPE_NAME           :-  com.ibm.msg.client.jakarta.wmq
+|   XMSC_NOLOCAL                        :-  false
+|   XMSC_OBJECT_IDENTITY                :-  475021703
+|   XMSC_PASSWORD                       :-  ********
+|   XMSC_RTT_DIRECT_AUTH                :-  0
+|   XMSC_RTT_PROXY_HOSTNAME             :-  <null>
+|   XMSC_RTT_PROXY_PORT                 :-  443
+|   XMSC_TRANSACTED                     :-  true
+|   XMSC_USERID                         :-  admin
+|   XMSC_USER_AUTHENTICATION_MQCSP      :-  true
+|   XMSC_WMQ_BROKER_CC_SUBQ             :-  SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_BROKER_CONTROLQ            :-  SYSTEM.BROKER.CONTROL.QUEUE
+|   XMSC_WMQ_BROKER_PUBQ                :-  SYSTEM.BROKER.DEFAULT.STREAM
+|   XMSC_WMQ_BROKER_QMGR                :-  
+|   XMSC_WMQ_BROKER_SUBQ                :-  SYSTEM.JMS.ND.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_CAPABILITY_ADVANCED        :-  true
+|   XMSC_WMQ_CCDTURL                    :-  <null>
+|   XMSC_WMQ_CF_DESCRIPTION             :-  <null>
+|   XMSC_WMQ_CHANNEL                    :-  DEV.ADMIN.SVRCONN
+|   XMSC_WMQ_CLEANUP_INTERVAL           :-  3600000
+|   XMSC_WMQ_CLEANUP_LEVEL              :-  1
+|   XMSC_WMQ_CLIENT_RECONNECT_OPTIONS   :-  0
+|   XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT   :-  1800
+|   XMSC_WMQ_CLONE_SUPPORT              :-  0
+|   XMSC_WMQ_COMMAND_LEVEL              :-  924
+|   XMSC_WMQ_CONNECTION_ID              :-  414D51435448554220202020202020209DF64B6800540040
+|   XMSC_WMQ_CONNECTION_MODE            :-  1
+|   XMSC_WMQ_CONNECTION_NAME_LIST_INT   :-  localhost(1424)
+|   XMSC_WMQ_CONNECTION_TAG             :-  [B@50a33f1b
+|   XMSC_WMQ_CONNECT_OPTIONS            :-  0
+|   XMSC_WMQ_HEADER_COMP                :-  [0]
+|   XMSC_WMQ_HOST_NAME                  :-  localhost/127.0.0.1
+|   XMSC_WMQ_LOCAL_ADDRESS              :-  
+|   XMSC_WMQ_MAP_NAME_STYLE             :-  true
+|   XMSC_WMQ_MAX_BUFFER_SIZE            :-  1000
+|   XMSC_WMQ_MESSAGE_RETENTION          :-  1
+|   XMSC_WMQ_MESSAGE_SELECTION          :-  0
+|   XMSC_WMQ_MSG_BATCH_SIZE             :-  10
+|   XMSC_WMQ_MSG_COMP                   :-  [0]
+|   XMSC_WMQ_OPT_PUB                    :-  false
+|   XMSC_WMQ_OUTCOME_NOTIFICATION       :-  true
+|   XMSC_WMQ_POLLING_INTERVAL           :-  5000
+|   XMSC_WMQ_PORT                       :-  1424
+|   XMSC_WMQ_PROCESS_DURATION           :-  0
+|   XMSC_WMQ_PROVIDER_VERSION           :-  8.0.0.0
+|   XMSC_WMQ_PUB_ACK_INTERVAL           :-  25
+|   XMSC_WMQ_QMGR_CCSID                 :-  819
+|   XMSC_WMQ_QUEUE_MANAGER              :-  THUB
+|   XMSC_WMQ_RECEIVE_EXIT               :-  <null>
+|   XMSC_WMQ_RECEIVE_EXIT_INIT          :-  <null>
+|   XMSC_WMQ_RECEIVE_ISOLATION          :-  0
+|   XMSC_WMQ_REMOTE_QMGR_QSGNAME        :-  <null>
+|   XMSC_WMQ_RESCAN_INTERVAL            :-  5000
+|   XMSC_WMQ_RESOLVED_CONNECTION_TAG    :-  MQCT9DF64B6800540040THUB_2025-06-13_09.59.54thub_mq.ThubMqApplication                                                           
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER     :-  THUB
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER_ID  :-  THUB_2025-06-13_09.59.54                        
+|   XMSC_WMQ_SECURITY_EXIT              :-  <null>
+|   XMSC_WMQ_SECURITY_EXIT_INIT         :-  <null>
+|   XMSC_WMQ_SEND_CHECK_COUNT           :-  0
+|   XMSC_WMQ_SEND_EXIT                  :-  <null>
+|   XMSC_WMQ_SEND_EXIT_INIT             :-  <null>
+|   XMSC_WMQ_SHARE_CONV_ALLOWED         :-  1
+|   XMSC_WMQ_SPARSE_SUBSCRIPTIONS       :-  false
+|   XMSC_WMQ_SSL_CERT_STORES_COL        :-  <null>
+|   XMSC_WMQ_SSL_CERT_STORES_STR        :-  <null>
+|   XMSC_WMQ_SSL_CIPHER_SUITE           :-  <null>
+|   XMSC_WMQ_SSL_FIPS_REQUIRED          :-  false
+|   XMSC_WMQ_SSL_KEY_RESETCOUNT         :-  0
+|   XMSC_WMQ_SSL_PEER_NAME              :-  <null>
+|   XMSC_WMQ_SSL_SOCKET_FACTORY         :-  <null>
+|   XMSC_WMQ_STATUS_REFRESH_INTERVAL    :-  60000
+|   XMSC_WMQ_SUBSCRIPTION_STORE         :-  1
+|   XMSC_WMQ_SYNCPOINT_ALL_GETS         :-  false
+|   XMSC_WMQ_TARGET_CLIENT_MATCHING     :-  true
+|   XMSC_WMQ_TEMPORARY_MODEL            :-  SYSTEM.DEFAULT.MODEL.QUEUE
+|   XMSC_WMQ_TEMP_Q_PREFIX              :-  
+|   XMSC_WMQ_TEMP_TOPIC_PREFIX          :-  
+|   XMSC_WMQ_USE_CONNECTION_POOLING     :-  true
+|   brokerVersion                       :-  -1
+|   deliveryMode                        :-  2
+|   failIfQuiesce                       :-  1
+|   multicast                           :-  0
+|   version                             :-  7
+|   wildcardFormat                      :-  0
+
+|   Instance         :-  com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer@251daf45
+|   Parent Session   :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSession@42a7d139
+|   asyncShadow      :-  <null>
+|   currentShadow    :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow@6d724968
+|   destination      :-  
+|   |   CCSID                           :-  1208
+|   |   JMS_IBM_Unmappable_Action       :-  REPORT
+|   |   JMS_IBM_Unmappable_Replacement  :-  63
+|   |   XMSC_ADMIN_OBJECT_TYPE          :-  33
+|   |   XMSC_CONNECTION_TYPE            :-  5
+|   |   XMSC_CONNECTION_TYPE_NAME       :-  com.ibm.msg.client.jakarta.wmq
+|   |   XMSC_DESTINATION_NAME           :-  NA.CITIFT.THUB.LISTEN
+|   |   XMSC_WMQ_BROKER_PUBQ            :-  
+|   |   XMSC_WMQ_BROKER_PUBQ_QMGR       :-  
+|   |   XMSC_WMQ_QUEUE_MANAGER          :-  
+|   |   XMSC_WMQ_REPLYTO_STYLE          :-  0
+|   |   alternateUserId                 :-  <null>
+|   |   brokerCCDurSubQueue             :-  SYSTEM.JMS.D.CC.SUBSCRIBER.QUEUE
+|   |   brokerDurSubQueue               :-  SYSTEM.JMS.D.SUBSCRIBER.QUEUE
+|   |   brokerVersion                   :-  0
+|   |   deliveryMode                    :-  -2
+|   |   destDescription                 :-  <null>
+|   |   encoding                        :-  273
+|   |   failIfQuiesce                   :-  1
+|   |   mdMessageContext                :-  0
+|   |   mdReadEnabled                   :-  false
+|   |   mdWriteEnabled                  :-  false
+|   |   messageBody                     :-  2
+|   |   priority                        :-  -2
+|   |   putAsyncAllowed                 :-  -1
+|   |   readAheadAllowed                :-  -1
+|   |   readAheadClosePolicy            :-  2
+|   |   targetClient                    :-  0
+|   |   timeToLive                      :-  -2
+|   |   version                         :-  7
+|   |   wildcardFormat                  :-  0
+|   nolocal          :-  false
+|   selector         :-  <null>
+|   subcriptionName  :-  <null>
+|   syncShadow       :-  com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow@6d724968
+|   XMSC_ACKNOWLEDGE_MODE               :-  0
+|   XMSC_ADMIN_OBJECT_TYPE              :-  20
+|   XMSC_ASYNC_EXCEPTIONS               :-  1
+|   XMSC_CLIENT_ID                      :-  <null>
+|   XMSC_CONNECTION_TYPE                :-  6
+|   XMSC_CONNECTION_TYPE_NAME           :-  com.ibm.msg.client.jakarta.wmq
+|   XMSC_NOLOCAL                        :-  false
+|   XMSC_OBJECT_IDENTITY                :-  622702405
+|   XMSC_PASSWORD                       :-  ********
+|   XMSC_RTT_DIRECT_AUTH                :-  0
+|   XMSC_RTT_PROXY_HOSTNAME             :-  <null>
+|   XMSC_RTT_PROXY_PORT                 :-  443
+|   XMSC_TRANSACTED                     :-  true
+|   XMSC_USERID                         :-  admin
+|   XMSC_USER_AUTHENTICATION_MQCSP      :-  true
+|   XMSC_WMQ_BROKER_CC_SUBQ             :-  SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_BROKER_CONTROLQ            :-  SYSTEM.BROKER.CONTROL.QUEUE
+|   XMSC_WMQ_BROKER_PUBQ                :-  SYSTEM.BROKER.DEFAULT.STREAM
+|   XMSC_WMQ_BROKER_QMGR                :-  
+|   XMSC_WMQ_BROKER_SUBQ                :-  SYSTEM.JMS.ND.SUBSCRIBER.QUEUE
+|   XMSC_WMQ_CAPABILITY_ADVANCED        :-  true
+|   XMSC_WMQ_CCDTURL                    :-  <null>
+|   XMSC_WMQ_CF_DESCRIPTION             :-  <null>
+|   XMSC_WMQ_CHANNEL                    :-  DEV.ADMIN.SVRCONN
+|   XMSC_WMQ_CLEANUP_INTERVAL           :-  3600000
+|   XMSC_WMQ_CLEANUP_LEVEL              :-  1
+|   XMSC_WMQ_CLIENT_RECONNECT_OPTIONS   :-  0
+|   XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT   :-  1800
+|   XMSC_WMQ_CLONE_SUPPORT              :-  0
+|   XMSC_WMQ_COMMAND_LEVEL              :-  924
+|   XMSC_WMQ_CONNECTION_ID              :-  414D51435448554220202020202020209DF64B6800540040
+|   XMSC_WMQ_CONNECTION_MODE            :-  1
+|   XMSC_WMQ_CONNECTION_NAME_LIST_INT   :-  localhost(1424)
+|   XMSC_WMQ_CONNECTION_TAG             :-  [B@50a33f1b
+|   XMSC_WMQ_CONNECT_OPTIONS            :-  0
+|   XMSC_WMQ_HEADER_COMP                :-  [0]
+|   XMSC_WMQ_HOST_NAME                  :-  localhost/127.0.0.1
+|   XMSC_WMQ_LOCAL_ADDRESS              :-  
+|   XMSC_WMQ_MAP_NAME_STYLE             :-  true
+|   XMSC_WMQ_MAX_BUFFER_SIZE            :-  1000
+|   XMSC_WMQ_MESSAGE_RETENTION          :-  1
+|   XMSC_WMQ_MESSAGE_SELECTION          :-  0
+|   XMSC_WMQ_MSG_BATCH_SIZE             :-  10
+|   XMSC_WMQ_MSG_COMP                   :-  [0]
+|   XMSC_WMQ_OPT_PUB                    :-  false
+|   XMSC_WMQ_OUTCOME_NOTIFICATION       :-  true
+|   XMSC_WMQ_POLLING_INTERVAL           :-  5000
+|   XMSC_WMQ_PORT                       :-  1424
+|   XMSC_WMQ_PROCESS_DURATION           :-  0
+|   XMSC_WMQ_PROVIDER_VERSION           :-  8.0.0.0
+|   XMSC_WMQ_PUB_ACK_INTERVAL           :-  25
+|   XMSC_WMQ_QMGR_CCSID                 :-  819
+|   XMSC_WMQ_QUEUE_MANAGER              :-  THUB
+|   XMSC_WMQ_RECEIVE_EXIT               :-  <null>
+|   XMSC_WMQ_RECEIVE_EXIT_INIT          :-  <null>
+|   XMSC_WMQ_RECEIVE_ISOLATION          :-  0
+|   XMSC_WMQ_REMOTE_QMGR_QSGNAME        :-  <null>
+|   XMSC_WMQ_RESCAN_INTERVAL            :-  5000
+|   XMSC_WMQ_RESOLVED_CONNECTION_TAG    :-  MQCT9DF64B6800540040THUB_2025-06-13_09.59.54thub_mq.ThubMqApplication                                                           
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER     :-  THUB
+|   XMSC_WMQ_RESOLVED_QUEUE_MANAGER_ID  :-  THUB_2025-06-13_09.59.54                        
+|   XMSC_WMQ_SECURITY_EXIT              :-  <null>
+|   XMSC_WMQ_SECURITY_EXIT_INIT         :-  <null>
+|   XMSC_WMQ_SEND_CHECK_COUNT           :-  0
+|   XMSC_WMQ_SEND_EXIT                  :-  <null>
+|   XMSC_WMQ_SEND_EXIT_INIT             :-  <null>
+|   XMSC_WMQ_SHARE_CONV_ALLOWED         :-  1
+|   XMSC_WMQ_SPARSE_SUBSCRIPTIONS       :-  false
+|   XMSC_WMQ_SSL_CERT_STORES_COL        :-  <null>
+|   XMSC_WMQ_SSL_CERT_STORES_STR        :-  <null>
+|   XMSC_WMQ_SSL_CIPHER_SUITE           :-  <null>
+|   XMSC_WMQ_SSL_FIPS_REQUIRED          :-  false
+|   XMSC_WMQ_SSL_KEY_RESETCOUNT         :-  0
+|   XMSC_WMQ_SSL_PEER_NAME              :-  <null>
+|   XMSC_WMQ_SSL_SOCKET_FACTORY         :-  <null>
+|   XMSC_WMQ_STATUS_REFRESH_INTERVAL    :-  60000
+|   XMSC_WMQ_SUBSCRIPTION_STORE         :-  1
+|   XMSC_WMQ_SYNCPOINT_ALL_GETS         :-  false
+|   XMSC_WMQ_TARGET_CLIENT_MATCHING     :-  true
+|   XMSC_WMQ_TEMPORARY_MODEL            :-  SYSTEM.DEFAULT.MODEL.QUEUE
+|   XMSC_WMQ_TEMP_Q_PREFIX              :-  
+|   XMSC_WMQ_TEMP_TOPIC_PREFIX          :-  
+|   XMSC_WMQ_USE_CONNECTION_POOLING     :-  true
+|   brokerVersion                       :-  -1
+|   deliveryMode                        :-  2
+|   failIfQuiesce                       :-  1
+|   multicast                           :-  0
+|   version                             :-  7
+|   wildcardFormat                      :-  0
+
+Producers        : 
+
+All Thread Information
+
+                          Name : Notification Thread
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 21
+                         State : RUNNABLE
+
+                          Name : SpringApplicationShutdownHook
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 29
+                         State : TIMED_WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+                               : org.apache.tomcat.util.threads.ThreadPoolExecutor.awaitTermination(ThreadPoolExecutor.java:1556)
+                               : org.apache.tomcat.util.net.AbstractEndpoint.shutdownExecutor(AbstractEndpoint.java:1109)
+                               : org.apache.tomcat.util.net.NioEndpoint.stopInternal(NioEndpoint.java:317)
+                               : org.apache.tomcat.util.net.AbstractEndpoint.stop(AbstractEndpoint.java:1432)
+                               : org.apache.coyote.AbstractProtocol.stop(AbstractProtocol.java:721)
+                               : org.apache.catalina.connector.Connector.stopInternal(Connector.java:1099)
+                               : org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:235)
+                               : org.apache.catalina.core.StandardService.removeConnector(StandardService.java:299)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer.lambda$removeServiceConnectors$1(TomcatWebServer.java:173)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer$$Lambda/0x00000246d03a3648.accept(null:-1)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer.doWithConnectors(TomcatWebServer.java:192)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer.removeServiceConnectors(TomcatWebServer.java:170)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer.stop(TomcatWebServer.java:358)
+                               : org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53)
+                               : org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:120)
+                               : org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:463)
+                               : org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:618)
+                               : org.springframework.context.support.DefaultLifecycleProcessor$$Lambda/0x00000246d05769b0.accept(null:-1)
+                               : java.lang.Iterable.forEach(Iterable.java:75)
+                               : org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:432)
+                               : org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:323)
+                               : org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1172)
+                               : org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:179)
+                               : org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+                               : org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+                               : org.springframework.boot.SpringApplicationShutdownHook$$Lambda/0x00000246d05762f8.accept(null:-1)
+                               : java.lang.Iterable.forEach(Iterable.java:75)
+                               : org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+
+                          Name : http-nio-8081-exec-8
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 48
+                         State : RUNNABLE
+                         Stack : java.lang.Thread.dumpThreads(Thread.java:-2)
+                               : java.lang.Thread.getAllStackTraces(Thread.java:2460)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.generateThreadInfo(DefaultTracer.java:1433)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.access$1200(DefaultTracer.java:151)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$10.run(DefaultTracer.java:1373)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$10.run(DefaultTracer.java:1297)
+                               : java.security.AccessController.executePrivileged(AccessController.java:778)
+                               : java.security.AccessController.doPrivileged(AccessController.java:319)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.ffst(DefaultTracer.java:1297)
+                               : com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl.ffst(TracerImpl.java:176)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1948)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1745)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteProxyQueue.proxyMQGET(RemoteProxyQueue.java:2707)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternalWithRecon(RemoteFAP.java:6152)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternal(RemoteFAP.java:6039)
+                               : com.ibm.mq.jmqi.internal.JmqiTools.getMessage(JmqiTools.java:1358)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGet(RemoteFAP.java:6002)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiGet(InterceptedJmqiImpl.java:1341)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.jmqiGet(ESEJMQI.java:602)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.getMsg(WMQConsumerShadow.java:1796)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.receiveInternal(WMQSyncConsumerShadow.java:233)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.receive(WMQConsumerShadow.java:1462)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.receive(WMQMessageConsumer.java:674)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receiveInboundMessage(JmsMessageConsumerImpl.java:1051)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receive(JmsMessageConsumerImpl.java:465)
+                               : com.ibm.mq.jakarta.jms.MQMessageConsumer.receive(MQMessageConsumer.java:179)
+                               : org.springframework.jms.support.destination.JmsDestinationAccessor.receiveFromConsumer(JmsDestinationAccessor.java:138)
+                               : org.springframework.jms.core.JmsTemplate.doReceive(JmsTemplate.java:814)
+                               : org.springframework.jms.core.JmsTemplate.doReceive(JmsTemplate.java:791)
+                               : org.springframework.jms.core.JmsTemplate.lambda$receiveSelected$9(JmsTemplate.java:775)
+                               : org.springframework.jms.core.JmsTemplate$$Lambda/0x00000246d04ad5d8.doInJms(null:-1)
+                               : org.springframework.jms.core.JmsTemplate.execute(JmsTemplate.java:530)
+                               : org.springframework.jms.core.JmsTemplate.receiveSelected(JmsTemplate.java:773)
+                               : org.springframework.jms.core.JmsTemplate.receive(JmsTemplate.java:749)
+                               : org.springframework.jms.core.JmsTemplate.receiveAndConvert(JmsTemplate.java:855)
+                               : com.example.thub_mq.controller.ThubController.receiveMessage(ThubController.java:26)
+                               : java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(DirectMethodHandle$Holder:-1)
+                               : java.lang.invoke.LambdaForm$MH/0x00000246d003d000.invoke(LambdaForm$MH:-1)
+                               : java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder:-1)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:153)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+                               : java.lang.reflect.Method.invoke(Method.java:580)
+                               : org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+                               : org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+                               : org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+                               : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+                               : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+                               : org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+                               : org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+                               : org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+                               : org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+                               : org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+                               : jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+                               : org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+                               : jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+                               : org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+                               : org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+                               : org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+                               : org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+                               : org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+                               : org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+                               : org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+                               : org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+                               : org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+                               : org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+                               : org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+                               : org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+                               : org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+                               : org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+                               : org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+                               : org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+                               : org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+
+                          Name : Common-Cleaner
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=InnocuousThreadGroup,maxpri=10]
+                            ID : 19
+                         State : TIMED_WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+                               : java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+                               : java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+                               : java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+                               : jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+                               : jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+                          Name : http-nio-8081-exec-10
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 50
+                         State : RUNNABLE
+                         Stack : java.util.zip.Inflater.inflateBytesBytes(Inflater.java:-2)
+                               : java.util.zip.Inflater.inflate(Inflater.java:381)
+                               : java.util.zip.InflaterInputStream.read(InflaterInputStream.java:178)
+                               : java.io.FilterInputStream.read(FilterInputStream.java:119)
+                               : sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+                               : sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+                               : sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+                               : sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+                               : java.io.InputStreamReader.read(InputStreamReader.java:190)
+                               : java.io.Reader.read(Reader.java:269)
+                               : java.util.Properties$LineReader.readLine(Properties.java:506)
+                               : java.util.Properties.load0(Properties.java:421)
+                               : java.util.Properties.load(Properties.java:384)
+                               : java.util.PropertyResourceBundle.<init>(PropertyResourceBundle.java:192)
+                               : java.util.PropertyResourceBundle.<init>(PropertyResourceBundle.java:169)
+                               : java.util.ResourceBundle$Control.newBundle0(ResourceBundle.java:3248)
+                               : java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:3154)
+                               : java.util.ResourceBundle.loadBundle(ResourceBundle.java:1991)
+                               : java.util.ResourceBundle.findBundle(ResourceBundle.java:1777)
+                               : java.util.ResourceBundle.findBundle(ResourceBundle.java:1729)
+                               : java.util.ResourceBundle.findBundle(ResourceBundle.java:1729)
+                               : java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1663)
+                               : java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1593)
+                               : java.util.ResourceBundle.getBundle(ResourceBundle.java:1277)
+                               : com.ibm.msg.client.commonservices.j2se.NLSServices.addCatalogue(NLSServices.java:129)
+                               : com.ibm.msg.client.commonservices.j2se.NLSServices.access$000(NLSServices.java:47)
+                               : com.ibm.msg.client.commonservices.j2se.NLSServices$1.run(NLSServices.java:86)
+                               : com.ibm.msg.client.commonservices.j2se.NLSServices$1.run(NLSServices.java:82)
+                               : java.security.AccessController.executePrivileged(AccessController.java:778)
+                               : java.security.AccessController.doPrivileged(AccessController.java:319)
+                               : com.ibm.msg.client.commonservices.j2se.NLSServices.addCatalogue(NLSServices.java:82)
+                               : com.ibm.msg.client.commonservices.nls.NLSServices.addCatalogue(NLSServices.java:103)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.<clinit>(Reason.java:129)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:197)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:156)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.getMsg(WMQConsumerShadow.java:1859)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.receiveInternal(WMQSyncConsumerShadow.java:233)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.receive(WMQConsumerShadow.java:1462)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.receive(WMQMessageConsumer.java:674)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receiveInboundMessage(JmsMessageConsumerImpl.java:1051)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receive(JmsMessageConsumerImpl.java:465)
+                               : com.ibm.mq.jakarta.jms.MQMessageConsumer.receive(MQMessageConsumer.java:179)
+                               : org.springframework.jms.support.destination.JmsDestinationAccessor.receiveFromConsumer(JmsDestinationAccessor.java:138)
+                               : org.springframework.jms.core.JmsTemplate.doReceive(JmsTemplate.java:814)
+                               : org.springframework.jms.core.JmsTemplate.doReceive(JmsTemplate.java:791)
+                               : org.springframework.jms.core.JmsTemplate.lambda$receiveSelected$9(JmsTemplate.java:775)
+                               : org.springframework.jms.core.JmsTemplate$$Lambda/0x00000246d04ad5d8.doInJms(null:-1)
+                               : org.springframework.jms.core.JmsTemplate.execute(JmsTemplate.java:530)
+                               : org.springframework.jms.core.JmsTemplate.receiveSelected(JmsTemplate.java:773)
+                               : org.springframework.jms.core.JmsTemplate.receive(JmsTemplate.java:749)
+                               : org.springframework.jms.core.JmsTemplate.receiveAndConvert(JmsTemplate.java:855)
+                               : com.example.thub_mq.controller.ThubController.receiveMessage(ThubController.java:26)
+                               : java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(DirectMethodHandle$Holder:-1)
+                               : java.lang.invoke.LambdaForm$MH/0x00000246d003d000.invoke(LambdaForm$MH:-1)
+                               : java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder:-1)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:153)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+                               : java.lang.reflect.Method.invoke(Method.java:580)
+                               : org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+                               : org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+                               : org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+                               : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+                               : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+                               : org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+                               : org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+                               : org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+                               : org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+                               : org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+                               : jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+                               : org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+                               : jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+                               : org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+                               : org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+                               : org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+                               : org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+                               : org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+                               : org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+                               : org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+                               : org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+                               : org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+                               : org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+                               : org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+                               : org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+                               : org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+                               : org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+                               : org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+                               : org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+                               : org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+                               : org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+                               : org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+                               : org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+
+                          Name : Catalina-utility-1
+                      Priority : 1
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 37
+                         State : WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
+                               : java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:4021)
+                               : java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3967)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1712)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1177)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+                               : java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+                               : org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+
+                          Name : SIGINT handler
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 56
+                         State : WAITING
+                         Stack : java.lang.Object.wait0(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:378)
+                               : java.lang.Thread.join(Thread.java:2017)
+                               : java.lang.Thread.join(Thread.java:2093)
+                               : java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:114)
+                               : java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:47)
+                               : java.lang.Shutdown.runHooks(Shutdown.java:130)
+                               : java.lang.Shutdown.exit(Shutdown.java:167)
+                               : java.lang.Terminator$1.handle(Terminator.java:51)
+                               : jdk.internal.misc.Signal$1.run(Signal.java:218)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+
+                          Name : container-0
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 39
+                         State : TIMED_WAITING
+                         Stack : java.lang.Thread.sleepNanos0(Thread.java:-2)
+                               : java.lang.Thread.sleepNanos(Thread.java:496)
+                               : java.lang.Thread.sleep(Thread.java:527)
+                               : org.apache.catalina.core.StandardServer.await(StandardServer.java:520)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer$1.run(TomcatWebServer.java:219)
+
+                          Name : DestroyJavaVM
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 53
+                         State : RUNNABLE
+
+                          Name : Attach Listener
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 12
+                         State : RUNNABLE
+
+                          Name : Catalina-utility-2
+                      Priority : 1
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 38
+                         State : TIMED_WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+                               : java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+                               : org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+                               : java.lang.Thread.runWith(Thread.java:1588)
+                               : java.lang.Thread.run(Thread.java:1575)
+
+                          Name : JMSCCThreadPoolMaster
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 54
+                         State : WAITING
+                         Stack : java.lang.Object.wait0(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:378)
+                               : java.lang.Object.wait(Object.java:352)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:678)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:648)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.run(WorkQueueManagerImplementation.java:918)
+
+                          Name : Reference Handler
+                      Priority : 10
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 9
+                         State : RUNNABLE
+                         Stack : java.lang.ref.Reference.waitForReferencePendingList(Reference.java:-2)
+                               : java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+                               : java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
+
+                          Name : Finalizer
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 10
+                         State : WAITING
+                         Stack : java.lang.Object.wait0(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:378)
+                               : java.lang.Object.wait(Object.java:352)
+                               : java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+                               : java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:166)
+                               : java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+                               : java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
+
+                          Name : Signal Dispatcher
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 11
+                         State : RUNNABLE
+
+                          Name : RcvThread: com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection@457700029[qmid=THUB_2025-06-13_09.59.54,fap=15,channel=DEV.ADMIN.SVRCONN,ccsid=819,sharecnv=10,hbint=300,peer=localhost/127.0.0.1(1424),localport=52877,ssl=no]
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=JMSCCThreadPool,maxpri=10]
+                            ID : 55
+                         State : RUNNABLE
+                         Stack : sun.nio.ch.Net.poll(Net.java:-2)
+                               : sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:191)
+                               : sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:280)
+                               : sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+                               : sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+                               : sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+                               : java.net.Socket$SocketInputStream.implRead(Socket.java:1116)
+                               : java.net.Socket$SocketInputStream.read(Socket.java:1103)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:2040)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:833)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:798)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1240)
+
+                          Name : Monitor Ctrl-Break
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 20
+                         State : RUNNABLE
+                         Stack : sun.nio.ch.SocketDispatcher.read0(SocketDispatcher.java:-2)
+                               : sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+                               : sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+                               : sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+                               : sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+                               : sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+                               : java.net.Socket$SocketInputStream.implRead(Socket.java:1116)
+                               : java.net.Socket$SocketInputStream.read(Socket.java:1103)
+                               : sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+                               : sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+                               : sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+                               : sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+                               : java.io.InputStreamReader.read(InputStreamReader.java:190)
+                               : java.io.BufferedReader.fill(BufferedReader.java:160)
+                               : java.io.BufferedReader.implReadLine(BufferedReader.java:370)
+                               : java.io.BufferedReader.readLine(BufferedReader.java:347)
+                               : java.io.BufferedReader.readLine(BufferedReader.java:436)
+                               : com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:55)
+
+First Failure Symptom Report completed at Fri Jun 13 15:54:30 IST 2025
+------------------------------------END FFST------------------------------------
