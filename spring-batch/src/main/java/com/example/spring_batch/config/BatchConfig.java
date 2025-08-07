@@ -17,6 +17,7 @@ import com.example.spring_batch.service.ExternalApiService;
 
 import jakarta.persistence.EntityManagerFactory;
 
+
 @Configuration
 public class BatchConfig {
     private final JobRepository jobRepository;
